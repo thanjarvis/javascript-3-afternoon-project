@@ -140,7 +140,7 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
+var grumpyActivity = cat.catFriends[];
 var fluffy2ndFriend;
 
 

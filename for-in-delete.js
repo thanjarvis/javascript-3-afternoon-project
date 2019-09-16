@@ -101,10 +101,11 @@ function double(obj){
 function secrets(obj){
   let str = ''
   for (let key in obj){
-    if (key === 'sh'){
+    if (key[0] === 's' && key[1] === 'h'){
       str +=  obj[key]
     }
   }
+  return str
 }
 
 
@@ -180,10 +181,15 @@ for (let key in deleteTheBigNumbers){
 
 function startsWithK(obj){
   for(let key in obj){
-    if (key ){}
+    if (key[0] === 'k'){
+      delete obj[key]
+    }
   }
+  return obj
 }
 
+
+//strings are just indexces, you can use that to see if the first letter is a k
 
 
 ////////// PROBLEM 8 //////////
@@ -200,7 +206,7 @@ function startsWithK(obj){
 function hiddenTreasure(obj){
   for (let key in obj){
     if(obj[key].includes('treasure') === false){
-      delete obj.key
+      delete obj[key]
     }
   }
   return obj
