@@ -139,9 +139,9 @@ var cat = {
     2. Assign fluffy2ndFriend the name of Fluffy's 2nd friend.
 */
 
-//Code Here
-var grumpyActivity = cat.catFriends[];
-var fluffy2ndFriend;
+
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 
 
@@ -181,9 +181,23 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+function recordCleaner (myCar){
+ 
 
+  for(let key in myCar){
+    if (key === 'accidents'){
+      for(let i = 0; i < myCar.accidents.length; i++){
+        if (myCar.accidents[i].atFaultForAccident === true){
+          myCar.accidents[i].atFaultForAccident = false
+        }
+      }
+      
+    }
+  }
 
+}
+
+recordCleaner(myCar)
 
 ////////// PROBLEM 5 //////////
 
@@ -200,6 +214,20 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
+function looper(arr){
+  for(i=0; i < arr.length; i++){
+    for(j=0; j < arr[i].length; j++){
+      if(arr[i][j] % 2 ===0){
+        arr[i][j] = 'even'
+      } else arr[i][j] = 'odd'
+    }
+  }
+    
+  return numsArr
+
+}
 
 
+looper(numsArr)
+//////////////////////////////////////////////////NOTE TO MENTOR/////////////////////////////////
+//in the chrome debugger the function in problem 5 works correctly and returns the changed array but, for some reason the jasmine test shows it as still having an error. fyi
